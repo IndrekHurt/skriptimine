@@ -1,5 +1,5 @@
 #!/bin/bash
 # kasutajat tervitav skript
 echo -n "Tere, "
-echo -n $(whoami)
+echo -n "$(echo "$(whoami)" | sed 's/.*/\u&/')"
 echo "!"
