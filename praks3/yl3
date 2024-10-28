@@ -1,0 +1,12 @@
+#!/bin/bash
+# Aja arvutamine
+echo -n "Sisesta ainepunktide arv: "
+read ainepunktid
+
+echo -n "Sisesta nadalate arv: "
+read nadalad
+
+ajakulu_kokku=$(( $ainepunktid * 26 ))
+ajakulu_nadalas=$(echo "scale=1;$ajakulu_kokku/$nadalad" | bc)
+ajakulu_nadalas=$(echo "($ajakulu_nadalas+0.9)/1" | bc)
+echo $ajakulu_nadalas
